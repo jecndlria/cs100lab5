@@ -1,5 +1,5 @@
-#ifndef __ADD_HPP__
-#define __ADD_HPP__
+#ifndef __POW_HPP__
+#define __POW_HPP__
 #include "base.hpp"
 #include "op.hpp"
 #include <string>
