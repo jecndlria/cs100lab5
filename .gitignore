@@ -1,0 +1,8 @@
+CMakeFiles
+googletest
+Makefile
+CMakeCache.txt
+bin
+*cmake
+*a
+test
