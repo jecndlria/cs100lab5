@@ -5,11 +5,13 @@
 #include <iomanip>
 #include <sstream>
 #include <time.h>
+#include <unistd.h>
 
 class Rand : public Base {
     public:
         Rand() {
-            srand(time(0));
+            usleep(1999999);
+            srand(time(NULL));
             operand = rand() % 100;
         }
         Rand(int seed) { 
