@@ -7,13 +7,14 @@
 
 class Op : public Base {
     public:
-        double operand = 0;
         Op(double value) : operand(value){ };
+        Op() : operand(0) {};
         virtual double evaluate() { return operand; }
         virtual std::string stringify() {
-            std::stringstream ss;
             return std::to_string(operand);
         }
+    private:
+        double operand = 0;
 };
 
 #endif //__OP_HPP__
