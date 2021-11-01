@@ -11,8 +11,9 @@ class Op : public Base {
         Op() : operand(0) {};
         virtual double evaluate() { return operand; }
         virtual std::string stringify() {
-            double DELETE_ME;
-            return std::to_string(operand);
+            std::ostringstream ss;
+            ss << std::fixed << std::setprecision(1) << operand;
+            return ss.str();
         }
     private:
         double operand = 0;
