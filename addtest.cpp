@@ -72,6 +72,6 @@ TEST(AddTest, NegativeNumbersString) {
     Base* test0 = new Op(-1);
     Base* test1 = new Op(-1);
     Add* test2 = new Add(test0, test1);
-    EXPECT_EQ(test2->stringify(), "(-1 + -1)");
+    EXPECT_EQ(test2->stringify(), "(-1.0 + -1.0)");
 }
 #endif //__OP_TEST_HPP__
