@@ -12,11 +12,52 @@ TEST(MultTest, WhatsTimesPlusTen) {
     EXPECT_EQ(test2->evaluate(), 90);
 }
 
-TEST(MultTest, WhatsNinePlusTenString) {
+TEST(MultTest, WhatsNineTimesTenString) {
     Op* test0 = new Op(9);
     Op* test1 = new Op(10);
     Mult* test2 = new Mult(test0, test1);
     EXPECT_EQ(test2->stringify(), "(9.0 * 10.0)");
+}
+TEST(MultTest, NegativeNumberEvaluate) {
+    Op* test0 = new Op(-2);
+    Op* test1 = new Op(2);
+    Mult* test2 = new Mult(test0, test1);
+    EXPECT_EQ(test2->evaluate(), -4);
+}
+
+TEST(MultTest, NegatieNumberString) {
+    Op* test0 = new Op(-2);
+    Op* test1 = new Op(2);
+    Mult* test2 = new Mult(test0, test1);
+    EXPECT_EQ(test2->stringify(), "(-2.0 * 2.0)");
+}
+
+TEST(MultTest, TwoNegativeNumbersEvaluate) {
+    Op* test0 = new Op(-2);
+    Op* test1 = new Op(-2);
+    Mult* test2 = new Mult(test0, test1);
+    EXPECT_EQ(test2->evaluate(), 4);
+}
+
+TEST(MultTest, TwoNegatieNumbersString) {
+    Op* test0 = new Op(-2);
+    Op* test1 = new Op(-2);
+    Mult* test2 = new Mult(test0, test1);
+    EXPECT_EQ(test2->stringify(), "(-2.0 * -2.0)");
+}
+
+TEST(MultTest, PositieTimesZeroEvaluate) {
+    Op* test0 = new Op(2);
+    Op* test1 = new Op(0);
+    Mult* test2 = new Mult(test0, test1);
+    EXPECT_EQ(test2->evaluate(), 0);
+}
+
+TEST(MultTest, PositieTimesZeroeString) {
+    Op* test0 = new Op(2);
+    Op* test1 = new Op(0);
+    Mult* test2 = new Mult(test0, test1);
+    EXPECT_EQ(test2->stringify(), "(2.0 * 0.0)");
 }
 
 TEST(MultTest, ZeroMult) {
