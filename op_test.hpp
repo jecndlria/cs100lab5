@@ -10,4 +10,10 @@ TEST(OpTest, OpEvaluateNonZero) {
     EXPECT_EQ(test->evaluate(), 8);
 }
 
+TEST(OpTest, OpEvaluationString) {
+    Op* test = new Op(8.4);
+    EXPECT_EQ(test->stringify(), "8.4");
+}
+
+
 #endif //__OP_TEST_HPP__
