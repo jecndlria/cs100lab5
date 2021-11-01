@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 #include "add.hpp"
 #include "op.hpp"
+#include "mult.hpp"
 TEST(AddTest, WhatsNinePlusTen) {
     Op* test0 = new Op(9.0);
     Op* test1 = new Op(10.0);
@@ -45,5 +46,32 @@ TEST(AddTest, ChildrenTestString) {
     Add* test2 = new Add(test0, test1);
     EXPECT_EQ(test2->stringify(), "((9.0 + 10.0) + (21.0 + 19.0))");
 }
-#endif //__OP_TEST_HPP__
 
+TEST(AddTest, ChildrenTestStringMult) {
+    Base* test0 = new Mult(new Op(9), new Op(10));
+    Base* test1 = new Mult(new Op(21), new Op(19));
+    Add* test2 = new Add(test0, test1);
+    EXPECT_EQ(test2->stringify(), "((9.0 * 10.0) + (21.0 * 19.0))");
+}
+
+TEST(AddTest, ChildrenTestMult) {
+    Base* test0 = new Mult(new Op(9), new Op(10));
+    Base* test1 = new Mult(new Op(21), new Op(19));
+    Add* test2 = new Add(test0, test1);
+    EXPECT_EQ(test2->evaluate(), 489);
+}
+
+TEST(AddTest, NegativeNumbers) {
+    Base* test0 = new Op(-1);
+    Base* test1 = new Op(-1);
+    Add* test2 = new Add(test0, test1);
+    EXPECT_EQ(test->evaluate(), -2);
+}
+
+TEST(AddTest, NegativeNumbersString) {
+    Base* test0 = new Op(-1);
+    Base* test1 = new Op(-1);
+    Add* test2 = new Add(test0, test1);
+    EXPECT_EQ(test->stringify(), "(-1 + -1)";
+}
+#endif //__OP_TEST_HPP__
