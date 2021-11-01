@@ -9,7 +9,7 @@ class Add : public Base
         Op lhs;
         Op rhs;
     public:
-        Add(Op lhs, Op rhs) : Base() { this->lhs = lhs; this->rhs = rhs; }
+        Add(Op lhs, Op rhs) { this->lhs = lhs; this->rhs = rhs; }
         virtual double evaluate() { return }
         virtual std::string stringify { return ""; }
 };
