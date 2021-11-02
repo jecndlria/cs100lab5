@@ -25,14 +25,4 @@ TEST(RandTest, AnotherRandEvaluationString) {
     EXPECT_EQ(test->stringify(), "90.0");
 }
 
-TEST(RandTest, TrueRandEvaluate) {
-    Rand* test = new Rand();
-    EXPECT_TRUE(test->evaluate() > 0);
-}
-
-TEST(RandTest, TrueRandStringify) {
-    Rand* test = new Rand();
-    EXPECT_TRUE(test->stringify().size() > 0);
-}
-
 #endif //__Rand_TEST_HPP__

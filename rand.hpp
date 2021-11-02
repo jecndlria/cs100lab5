@@ -10,8 +10,6 @@
 class Rand : public Base {
     public:
         Rand() {
-            usleep(1999999);
-            srand(time(NULL));
             operand = rand() % 100;
         }
         Rand(int seed) { 
